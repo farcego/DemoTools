@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Detect if a vector of lower age bounds is plausibly of abridged ages. — is_abridged • DemoTools</title>
+<title>calculate a0 in different ways — lt_rule_1a0 • DemoTools</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,8 @@
 
 
 
-<meta property="og:title" content="Detect if a vector of lower age bounds is plausibly of abridged ages. — is_abridged" />
-<meta property="og:description" content="A logical utility that checks if a given vector is of the lower bounds of abridged age groups or not." />
+<meta property="og:title" content="calculate a0 in different ways — lt_rule_1a0" />
+<meta property="og:description" content="This function wraps the Coale-Demeny and Andreev-Kingkade approximations for a0, which can come from M0, qo, or IMR." />
 <meta property="og:image" content="https://timriffe.github.io/DemoTools/logo.png" />
 
 
@@ -153,37 +153,66 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Detect if a vector of lower age bounds is plausibly of abridged ages.</h1>
-    <small class="dont-index">Source: <a href='https://github.com/timriffe/DemoTools/blob/master/R/utilsAge.R'><code>R/utilsAge.R</code></a></small>
-    <div class="hidden name"><code>is_abridged.Rd</code></div>
+    <h1>calculate a0 in different ways</h1>
+    <small class="dont-index">Source: <a href='https://github.com/timriffe/DemoTools/blob/master/R/lt_rule.R'><code>R/lt_rule.R</code></a></small>
+    <div class="hidden name"><code>lt_rule_1a0.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>A logical utility that checks if a given vector is of the lower bounds of abridged age groups or not.</p>
+    <p>This function wraps the Coale-Demeny and Andreev-Kingkade approximations for a0, which can come from M0, qo, or IMR.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>is_abridged</span>(<span class='no'>Age</span>)</pre>
+    <pre class="usage"><span class='fu'>lt_rule_1a0</span>(
+  <span class='kw'>rule</span> <span class='kw'>=</span> <span class='st'>"ak"</span>,
+  <span class='kw'>M0</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>q0</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>Sex</span> <span class='kw'>=</span> <span class='st'>"m"</span>,
+  <span class='kw'>IMR</span> <span class='kw'>=</span> <span class='fl'>NA</span>,
+  <span class='kw'>region</span> <span class='kw'>=</span> <span class='st'>"w"</span>,
+  <span class='kw'>SRB</span> <span class='kw'>=</span> <span class='fl'>1.05</span>
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>Age</th>
-      <td><p>integer. Vector of lower age bounds.</p></td>
+      <th>rule</th>
+      <td><p>character. Either <code>"ak"</code> (Andreev-Kingkade) or <code>"cd"</code> (Coale-Demeny).</p></td>
+    </tr>
+    <tr>
+      <th>M0</th>
+      <td><p>numeric. Event exposure infant mortality rate.</p></td>
+    </tr>
+    <tr>
+      <th>q0</th>
+      <td><p>a value or vector of values of m0, the death risk in the first year of life.</p></td>
+    </tr>
+    <tr>
+      <th>Sex</th>
+      <td><p>character, either <code>"m"</code>, <code>"f"</code>, or <code>"b"</code></p></td>
+    </tr>
+    <tr>
+      <th>IMR</th>
+      <td><p>numeric. Optional. q<sub>0</sub>, the death probability in first year of life, in case available separately.</p></td>
+    </tr>
+    <tr>
+      <th>region</th>
+      <td><p>character. <code>"n"</code>, <code>"e"</code>, <code>"s"</code> or <code>"w"</code> for North, East, South, or West.</p></td>
+    </tr>
+    <tr>
+      <th>SRB</th>
+      <td><p>the sex ratio at birth (boys / girls), detault 1.05</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Logical <code>TRUE</code> if abridged, <code>FALSE</code> otherwise.</p>
+    <p>a0, the estimated average age at death of those dying in the first year of life, either a single value or a vector of values.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># as expected, TRUE</span>
-<span class='fu'>is_abridged</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>,<span class='fl'>1</span>,<span class='fl'>5</span>,<span class='fl'>10</span>,<span class='fl'>15</span>,<span class='fl'>20</span>,<span class='fl'>25</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='co'># standard 5, not abridged, FALSE</span>
-<span class='fu'>is_abridged</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>,<span class='fl'>5</span>,<span class='fl'>10</span>,<span class='fl'>15</span>,<span class='fl'>20</span>,<span class='fl'>25</span>))</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='co'># plausible, TRUE</span>
-<span class='fu'>is_abridged</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>,<span class='fl'>5</span>,<span class='fl'>10</span>,<span class='fl'>15</span>,<span class='fl'>20</span>,<span class='fl'>25</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='co'># plausible, TRUE</span>
-<span class='fu'>is_abridged</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>5</span>,<span class='fl'>10</span>,<span class='fl'>15</span>,<span class='fl'>20</span>,<span class='fl'>25</span>))</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='co'># 10 year age group not abridged, FALSE</span>
-<span class='fu'>is_abridged</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>,<span class='fl'>1</span>,<span class='fl'>5</span>,<span class='fl'>10</span>,<span class='fl'>15</span>,<span class='fl'>25</span>))</div><div class='output co'>#&gt; [1] FALSE</div></pre>
+    <p>If sex is given as both, <code>"b"</code>, then we calculate the male and female results separately, then weight them together using SRB. This is bad in theory, but the leverage is trivial, and it's better than using male or female coefs for the total population.</p>
+<p>Neither Coale-Demeny nor Andreev-Kingkade have explicit a0 rules for both-sexes combined. There's not a good way to arrive at a both-sex a0 estimate without increasing data requirements (you'd need data from each sex, which are not always available). It's more convenient to blend sex-specific a0 estimates based on something. Here we use SRB to do this, for no other reason than it has an easy well-known default value. This is bad because it assumes no sex differences in infant mortality, but this choice has a trivial impact on results.</p>
+
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
