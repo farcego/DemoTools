@@ -47,7 +47,7 @@
 
 
 <meta property="og:title" content="Estimate Rogers-Castro migration age schedule — mig_estimate_rc" />
-<meta property="og:description" content="Given a set of ages and observed age-specific migration rates, estimate the parameters of a Roger-Castro model migration schedule. 
+<meta property="og:description" content="Given a set of ages and observed age-specific migration rates, estimate the parameters of a Roger-Castro model migration schedule.
 Choose between a 7,9,11 or 13 parameter model." />
 <meta property="og:image" content="https://timriffe.github.io/DemoTools/logo.png" />
 
@@ -81,7 +81,7 @@ Choose between a 7,9,11 or 13 parameter model." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">DemoTools</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">01.09.05</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">01.09.08</span>
       </span>
     </div>
 
@@ -110,7 +110,7 @@ Choose between a 7,9,11 or 13 parameter model." />
       <a href="../articles/smoothing_with_demotools.html">Smooth demographic counts</a>
     </li>
     <li>
-      <a href="../articles/lifetable_with_demotools.html">Construct a lifetable</a>
+      <a href="../articles/lifetables_with_demotools.html">Construct a lifetable</a>
     </li>
     <li>
       <a href="../articles/migration_with_demotools.html">Model migration</a>
@@ -160,7 +160,7 @@ Choose between a 7,9,11 or 13 parameter model." />
     </div>
 
     <div class="ref-description">
-    <p>Given a set of ages and observed age-specific migration rates, estimate the parameters of a Roger-Castro model migration schedule. 
+    <p>Given a set of ages and observed age-specific migration rates, estimate the parameters of a Roger-Castro model migration schedule.
 Choose between a 7,9,11 or 13 parameter model.</p>
     </div>
 
@@ -231,8 +231,8 @@ post_retirement <span class='op'>=</span> <span class='cn'>FALSE</span><span cla
 </div><div class='output co'>#&gt; 
 #&gt; SAMPLING FOR MODEL '28c89f5948288d3bb37fc72d345573dc' NOW (CHAIN 1).
 #&gt; Chain 1: 
-#&gt; Chain 1: Gradient evaluation took 0.000118 seconds
-#&gt; Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 1.18 seconds.
+#&gt; Chain 1: Gradient evaluation took 9.9e-05 seconds
+#&gt; Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 0.99 seconds.
 #&gt; Chain 1: Adjust your expectations accordingly!
 #&gt; Chain 1: 
 #&gt; Chain 1: 
@@ -249,15 +249,15 @@ post_retirement <span class='op'>=</span> <span class='cn'>FALSE</span><span cla
 #&gt; Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 #&gt; Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 #&gt; Chain 1: 
-#&gt; Chain 1:  Elapsed Time: 0.679758 seconds (Warm-up)
-#&gt; Chain 1:                0.625317 seconds (Sampling)
-#&gt; Chain 1:                1.30507 seconds (Total)
+#&gt; Chain 1:  Elapsed Time: 0.648355 seconds (Warm-up)
+#&gt; Chain 1:                0.602103 seconds (Sampling)
+#&gt; Chain 1:                1.25046 seconds (Total)
 #&gt; Chain 1: 
 #&gt; 
 #&gt; SAMPLING FOR MODEL '28c89f5948288d3bb37fc72d345573dc' NOW (CHAIN 2).
 #&gt; Chain 2: 
-#&gt; Chain 2: Gradient evaluation took 3.6e-05 seconds
-#&gt; Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.36 seconds.
+#&gt; Chain 2: Gradient evaluation took 3.7e-05 seconds
+#&gt; Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 0.37 seconds.
 #&gt; Chain 2: Adjust your expectations accordingly!
 #&gt; Chain 2: 
 #&gt; Chain 2: 
@@ -274,15 +274,15 @@ post_retirement <span class='op'>=</span> <span class='cn'>FALSE</span><span cla
 #&gt; Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 #&gt; Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
 #&gt; Chain 2: 
-#&gt; Chain 2:  Elapsed Time: 0.767743 seconds (Warm-up)
-#&gt; Chain 2:                0.677094 seconds (Sampling)
-#&gt; Chain 2:                1.44484 seconds (Total)
+#&gt; Chain 2:  Elapsed Time: 0.738208 seconds (Warm-up)
+#&gt; Chain 2:                0.649818 seconds (Sampling)
+#&gt; Chain 2:                1.38803 seconds (Total)
 #&gt; Chain 2: 
 #&gt; 
 #&gt; SAMPLING FOR MODEL '28c89f5948288d3bb37fc72d345573dc' NOW (CHAIN 3).
 #&gt; Chain 3: 
-#&gt; Chain 3: Gradient evaluation took 3.8e-05 seconds
-#&gt; Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.38 seconds.
+#&gt; Chain 3: Gradient evaluation took 4e-05 seconds
+#&gt; Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 0.4 seconds.
 #&gt; Chain 3: Adjust your expectations accordingly!
 #&gt; Chain 3: 
 #&gt; Chain 3: 
@@ -299,9 +299,9 @@ post_retirement <span class='op'>=</span> <span class='cn'>FALSE</span><span cla
 #&gt; Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 #&gt; Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
 #&gt; Chain 3: 
-#&gt; Chain 3:  Elapsed Time: 0.724845 seconds (Warm-up)
-#&gt; Chain 3:                0.638618 seconds (Sampling)
-#&gt; Chain 3:                1.36346 seconds (Total)
+#&gt; Chain 3:  Elapsed Time: 0.696519 seconds (Warm-up)
+#&gt; Chain 3:                0.614479 seconds (Sampling)
+#&gt; Chain 3:                1.311 seconds (Total)
 #&gt; Chain 3: 
 #&gt; 
 #&gt; SAMPLING FOR MODEL '28c89f5948288d3bb37fc72d345573dc' NOW (CHAIN 4).
@@ -324,9 +324,9 @@ post_retirement <span class='op'>=</span> <span class='cn'>FALSE</span><span cla
 #&gt; Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 #&gt; Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
 #&gt; Chain 4: 
-#&gt; Chain 4:  Elapsed Time: 0.746724 seconds (Warm-up)
-#&gt; Chain 4:                0.621884 seconds (Sampling)
-#&gt; Chain 4:                1.36861 seconds (Total)
+#&gt; Chain 4:  Elapsed Time: 0.716513 seconds (Warm-up)
+#&gt; Chain 4:                0.588452 seconds (Sampling)
+#&gt; Chain 4:                1.30496 seconds (Total)
 #&gt; Chain 4: </div><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
 <span class='co'># plot the results and data</span>
 <span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>ages</span>, <span class='va'>mig_rate</span>, ylab <span class='op'>=</span> <span class='st'>"migration rate"</span>, xlab <span class='op'>=</span> <span class='st'>"age"</span><span class='op'>)</span>
